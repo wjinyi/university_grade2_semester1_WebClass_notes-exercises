@@ -1,0 +1,28 @@
+1.Bootstrap介绍
+2.展示作品
+3.加入我们
+
+
+
+Bootstrap简介
+Bootstrap中文网 -- www.bootcss.com 创建于2012年。起因是国内没有较好的关于Bootstrap的中文教程和交流渠道，因此，我们对Bootstrap的文档进行了翻译整理，并且建立了QQ群和微博（@bootcss），方便更多热爱这个CSS框架的攻城师们分享、交流自己在前端设计、开发方面的心得。
+
+展示作品
+你是Bootstrap粉丝吗？你正在用Bootstrap做开发吗？你开发的网站是 Powered By Bootstrap 的吗？那就把你的网站show出来吧！
+
+凡是经过确认采用Bootstrap CSS框架的网站，我们会将你所提交网站的截图及介绍展示到“Bootstrap优站精选”列表中，并有机会在 Bootstrap中文网 的首页进行推荐。
+
+联系方式
+邮箱地址26650599@qq.com
+
+邮编：1234567
+
+电话：010-88888888
+
+传真：010-88666666
+
+
+
+企业培训 | 合作事宜 | 版权投诉
+
+津ICP 备12345678. ? 2009-2016 个人Bootstrap练习. Powered by Bootstrap.

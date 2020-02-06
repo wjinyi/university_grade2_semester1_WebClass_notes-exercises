@@ -1,0 +1,10 @@
+	/* 这里很重要，每次复习都忘记，
+	盒子模型的上下左右边框是可以
+	用于消除各种标签的外边距的。
+	padding用于消除列表的内边框*/
+	ul{
+		text-align: center;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		padding-left: 0px;
+	}

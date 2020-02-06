@@ -1,0 +1,97 @@
+js内置对象
+1、Date对象
+（1）创建 Date 对象的语法：
+	var myDate=new Date()
+（2）Date的常用方法
+getFullYear()：从 Date 对象以四位数字返回年份 
+getMonth():从 Date 对象返回月份 (0 ~ 11)。 
+getDate(): 从 Date 对象返回一个月中的某一天 (1 ~ 31)。 
+==案例1：显示当前的年月日
+innerHTML属性：设置标签内的文本
+每个载入浏览器的 HTML 文档都会成为 Document 对象.每个HTML标签都是一个对象
+Document对象的方法->getElementById():返回对拥有指定 id 的第一个对象的引用。
+变量的驼峰命名法
+
+
+
+Uncaught TypeError: Cannot set property 'innerHTML' of null
+注：当涉及对HTML文档进行操作，javaScript写在head中，需要加上
+ window.onload = function(){
+        javascript代码
+        }
+===案例2：时分秒
+getHours() 返回 Date 对象的小时 (0 ~ 23)。 
+getMinutes() 返回 Date 对象的分钟 (0 ~ 59)。
+getSeconds() 返回 Date 对象的秒数 (0 ~ 59)。 
+
+setInterval() 方法:可按照指定的周期（以毫秒计）来调用函数或计算表达式。
+语法：setInterval(code,millisec[,"lang"])
+clearInterval() 方法可取消由 setInterval() 设置的 timeout。
+===案例3：星期
+getDay() 从 Date 对象返回一周中的某一天 (0 ~ 6)。 
+创建 Array 对象的语法：
+new Array();
+new Array(size);
+new Array(element0, element0, ..., elementn);
+
+==
+2、Math内置对象
+应用案例： 手机号摇奖
+使用 Math 的属性和方法的语法：
+var pi_value=Math.PI;
+var sqrt_value=Math.sqrt(15);
+知识点：
+（1）随机整数
+random() 返回 0 ~ 1 之间的随机数。 
+随机整数n = parseInt(Math.random()*10)
+(2)DOM文档对象模型
+1）节点
+根据 DOM，HTML 文档中的每个成分都是一个节点。
+
+DOM 是这样规定的：
+
+整个文档是一个文档节点 
+每个 HTML 标签是一个元素节点 
+包含在 HTML 元素中的文本是文本节点 
+每一个 HTML 属性是一个属性节点 
+注释属于注释节点 
+2）节点访问
+通过使用 getElementById() 、 getElementsByTagName() 、getElementsByClassName()方法 
+通过使用一个元素节点的 parentNode、firstChild 以及 lastChild 属性
+
+getElementById():通过Id名来获取元素
+getElementsByTagName():通过标签名来获取元素
+getElementsByClassName():通过类名来获取元素
+
+（3）事件
+Event 对象。Event 对象代表事件的状态，比如事件在其中发生的元素、键盘按键的状态、鼠标的位置、鼠标按钮的状态。
+
+事件绑定
+
+事件对象.onclick = function(){
+
+   ......
+}
+(4)innerHTML
+(5)length 设置或返回数组中元素的数目。 
+(6)setInterval()和clearInterval()
+setInterval():开启定时器
+clearInterval():关闭定时器
+setInterval() 方法会不停地调用函数，直到 clearInterval() 被调用或窗口被关闭。由 setInterval() 返回的 ID 值可用作 clearInterval() 方法的参数。
+============
+javaScript的DOM操作
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

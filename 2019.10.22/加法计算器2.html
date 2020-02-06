@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+        function cal(sign){
+        	var firstValue = document.myForm.first.value;
+        	var secondValue = document.myForm.second.value;
+        	if(isNaN(firstValue)||isNaN(secondValue)){
+        		alert("请输入数字！");
+        		return false;
+        	}
+            var num1 = parseFloat(firstValue);
+            var num2 = parseFloat(secondValue);
+            switch(sign){
+                case "+":
+                 document.myForm.result.value = num1 + num2;
+                 break;
+                case "-":
+                 document.myForm.result.value = num1 - num2;
+                 break;
+                case "*":
+                document.myForm.result.value = num1 * num2;
+                 break;
+              case "/":
+                    if(num2 == 0){
+                        alert("除数不能为0！");
+                        return;
+                    }
+                    else
+                        document.myForm.result.value = num1 /num2;
+                        break;                 
+            }
+        	
+        }
+         
+	</script>
+</head>
+<body>
+	<form name="myForm" action="">
+	    第一个数：<input type="text" name="first">
+	    第二个数：<input type="text" name="second">
+		<input type="button" value=" +" onclick="cal('+')">
+        <input type="button" value="-" onclick="cal('-')">
+        <input type="button" value="*" onclick="cal('*')">
+        <input type="button" value="/" onclick="cal('/')">
+		结果：<input type="text" name="result">
+	</form>
+</body>
+</html>

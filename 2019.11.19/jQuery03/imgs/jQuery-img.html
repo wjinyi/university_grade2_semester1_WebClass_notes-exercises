@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery_图片库</title>
+	<link rel="stylesheet" href="style_img.css">
+	<script src="jquery-2.1.4.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("ul li img").click(function(){
+				var url = $(this).attr("src");
+				url = replace("small","big");
+				$("#con img").attr("src",url);
+			});
+		});
+	</script>
+</head>
+<body>
+  <div id="wrap"> 
+	<ul id="list">
+		<li><img src="images/small1.jpg"></li>
+		<li><img src="images/small2.jpg"></li>
+		<li><img src="images/small3.jpg"></li>
+		<li><img src="images/small4.jpg"></li>
+		<li><img src="images/small5.jpg"></li>
+	</ul>
+	<div id="con">
+		<img src="images/big1.jpg">
+	</div>
+</div>	
+</body>
+</html>

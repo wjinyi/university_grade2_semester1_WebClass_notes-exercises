@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>link exercise</title>
+	<style type="text/css">
+		/*以下是对p标签的后代选择器中的超链接进行设置的四种状态，顺序（必须按顺序）分别是：未访问时-->访问过-->停留-->点击瞬间。*/
+		p span a:link{
+			color: red;
+		}
+		p span a:visited{
+			color: yellow;
+		}
+		p span a:hover{
+			color: blue;
+
+		}
+		p span a:active{
+			color: green;
+		}
+		/*这些状态还可以在其他标签中应用，例如：*/
+		span#test:hover{
+			background-color: pink;
+			color: green;
+		}
+		span#test:active{
+			color: yellow;
+		}
+/*		通过这些设置，可以作出非常酷炫的网页视觉效果，学会了js动态效果以后，还可以有更多花样可以用在这上面。*/
+	</style>
+</head>
+<body>
+<p>
+	以下是百度搜索引擎的链接：
+	<span><a href="http:www.baidu.com">http:www.baidu.com</a></span>
+</p>
+<div><span id=test>this is a css style test.</span></div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>同程旅游网</title>	
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript">
+		function timer(){
+			var clock = new Date();
+			var n = clock.getFullYear();
+			var y = clock.getMonth();
+			var r = clock.getDay();
+
+			day = Array("日","一","二","三","四","五","六");
+			document.getElementById('topright').innerHTML = n + "年" + (y+1) + "月" + "星期" + day[r];
+		}
+	</script>
+	
+</head>
+<body onload="timer()">
+	<div class="header">
+		<div class="hcontent">
+			<span id="topleft">
+			您好，欢迎使用LY.com访问同程 <span color="red">登录</span> 注册
+			</span>
+			<span id="topright"></span>
+		</div>
+	</div>
+	<div class="main">
+		<div class="area2">
+			<div class="images"><img src="images/logo.png"></div>
+			<div class="images"><img src="images/input.png"></div>
+			<div class="images"><img src="images/tel.png"></div>
+		</div>
+		<div class="area3">
+			<ul class="guide1">
+				<li><a href="#">首页</a></li>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">首页</a></li>
+			</ul>
+		</div>
+		<div class="area4">
+			<div class="content4">
+				<div class="left">
+				<div class="guide2">
+					
+				</div>
+				<div class="form">
+					
+				</div>
+			</div>
+			<div class="middle">
+				<img src="images/focus01.jpg">
+			</div>
+			<div class="right">
+				<ul class="waterfall">
+					<li><img src="images/right01.jpg"></li>
+					<li><img src="images/right02.jpg"></li>
+				</ul>
+			</div>
+			</div>
+		</div>
+		
+	</div>
+</body>
+</html>

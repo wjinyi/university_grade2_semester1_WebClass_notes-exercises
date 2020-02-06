@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>xxxx</title>
+	<link rel="stylesheet" type="text/css" href="style_ex1.css">
+	<script type="text/javascript">
+		function timer(){
+			var clock = new Date();
+			var n = clock.getFullYear();
+			var y = clock.getMonth();
+			var r = clock.getDate();
+
+			var xq = clock.getDay();
+			var day = Array("一","二","三","四","五","六","日");
+
+			document.getElementById('hright').innerHTML = n + "年" + (y+1) + "月" + r + "日" + "星期" + day[xq+6];
+		}
+	</script>
+</head>
+<body onload="timer()">
+	<div class="header">
+		<div class="hcontent">
+			<span id="hleft">
+			您好，欢迎使用LY.com访问同程 <a id="signin" href="#">登陆</a> <a id="signup" href="#">注册</a>
+			</span>
+			<span id="hright">
+			</span>
+		</div>
+	</div>
+	<div class="main">
+		<div class="area2">
+			<div class="content2">
+				<img style="float: left;" src="images/logo.png">
+				<img style="float: left;" src="images/input.png">
+				<img style="float: right;" src="images/tel.png">
+			</div>
+		</div>
+		<div class="area3">
+			<div class="content3">
+				<div id="guide1">
+					<ul class="list3">
+						<li><a href="#">首页</a></li>
+						<li><a href="#">首页</a></li>
+						<li><a href="#">首页</a></li>
+						<li><a href="#">首页</a></li>
+						<li><a href="#">首页</a></li>
+						<li><a href="#">首页</a></li>
+						<li><a href="#">首页</a></li>
+						<li><a href="#">首页</a></li>
+						<li><a href="#">首页</a></li>
+						<li><a href="#">首页</a></li>
+						<li><a href="#">首页</a></li>
+						<li><a href="#">首页</a></li>
+						<li><a href="#">首页</a></li>
+						<li><a href="#">首页</a></li>
+						<li><a href="#">首页</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="area4">
+			<div class="content4">
+				<span id="guide2">
+					<ul class="list4">
+						<li><a href="#">机票</a></li>
+						<li><a href="#">机票</a></li>
+						<li><a href="#">机票</a></li>
+						<li><a href="#">机票</a></li>
+						<li><a href="#">机票</a></li>
+						<li><a href="#">机票</a></li>
+						<li><a href="#">机票</a></li>
+						<li><a href="#">机票</a></li>
+					</ul>
+				</span>
+				<div class="form" style="float: left;">
+					<div class="ftitle" style="clear: both;">
+						<span id="guonei" style="border-bottom: 3.5px solid green">国内机票</span>
+						<span id="guoji" style="padding-left: 5px">国际机票</span>
+					</div>
+					<div class="tform" style="clear: both;">
+						<form>
+							<div id="trip">
+								行程类型: <input type="radio" name="ttype">单程 <input type="radio" name="ttype">往返 <input type="radio" name="ttype">联程
+							</div>
+							<div>
+								<span>出发城市</span><br>
+								<input type="text" name="city"><br>
+								<br>
+								<span>到达城市</span><br>
+								<input type="text" name="city">
+							</div>
+						</form>
+					</div>
+				</div>
+				<span class="foucus">
+					<img style="float: left;" src="images/focus01.jpg">
+					<ul style="float: left;">
+						<li><img src="images/right01.jpg"></li>
+						<li><img src="images/right02.jpg"></li>
+					</ul>
+				</span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

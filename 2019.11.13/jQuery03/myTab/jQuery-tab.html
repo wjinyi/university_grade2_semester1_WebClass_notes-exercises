@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery选项卡</title>
+	<link rel="stylesheet" href="style_tab.css">
+	<script src="jquery-2.1.4.min.js"></script>
+	<script src="tab.js">
+		$(function(){
+			$("li .tabFocus1").click(function(){
+				$(this).addClass("tabFocus").next(".mod").css("display","block");
+			})
+		})
+	</script>
+</head>
+<body>
+	<div class="wrap" id="wrap">
+		<div id="tab">
+			<ul>
+				<li class="tabFocus1">tab1</li>
+				<li>tab2</li>
+				<li>tab3</li>
+			</ul>
+		</div>
+		<div id="content">
+			<div class="mod">
+				<ul>
+					<li>tab1-列表1</li>
+					<li>tab1-列表2</li>
+					<li>tab1-列表3</li>
+				</ul>
+			</div>
+			<div>
+				<ul>
+					<li>tab2-列表1</li>
+					<li>tab2-列表2</li>
+					<li>tab2-列表3</li>
+				</ul>
+			</div>
+			<div>
+				<ul>
+					<li>tab3-列表1</li>
+					<li>tab3-列表2</li>
+					<li>tab3-列表3</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

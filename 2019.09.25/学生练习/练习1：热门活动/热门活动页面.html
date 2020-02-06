@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>热门活动</title>
+	<style type="text/css">
+		*{margin:0;padding:0;}
+	div#body{
+		width: 700px;
+		margin:0 auto;
+		/*background-color: pink;*/
+	}
+	/*以下样式设计，更好的方法见body标签内样式设置*/
+/*	div#top{
+		height: 50px;
+		width: 700px;
+		background-color: purple;
+	}
+	p#whot{
+		width: 200px;
+		background-color: green;
+		font-family: "黑体";
+		font-weight: bold;
+		font-size: 30px;
+		color: #333;
+
+		float: left;
+
+	}	
+	p#smore{
+		width: 40px;
+		background-color: red;
+		font-family: "黑体";
+		font-weight: bold;
+		font-size: 20px;
+		color: #666;
+		float: right;*/
+/*	}*/
+/*	div#content{
+		height: 500px;
+		width: 700px;
+		background-color: yellow;
+	}
+	div#content p{
+		height: 100px;
+		width: 350px;
+		padding:50px;
+		float: left;
+	}*/
+	.info{
+		font-family: "黑体";
+		font-size: 15px;
+		font-weight: bold;
+		color: #666;
+	}
+	/*以下為老師寫的代碼，我自己的方法有問題不全面*/
+		.clear:after{
+		    content: '';          /*在clear类后面添加内容为空*/
+    		display: block;      /*把添加的内容转化为块元素*/
+    		clear: both;         
+	}
+		ul{
+		clear: both;	
+		overflow: hidden;
+	}
+		ul li{
+		list-style: none;
+		float: left;
+		margin: 20px;
+	}
+	</style>
+</head>
+<body>
+<div id=body>
+	<div id=top>
+<!-- 	<p id=whot>热门活动</p>
+	<p id=smore>更多</p> -->
+		<h1><p id=whot style="float: left;">热门</p><p id=smore style="float: right;color: #666;font-size: 20px;">更多</p></h1>
+	</div>
+<!-- 	<div id=content>
+		<ul>
+		<li><img src="image/img1.png"><br>推荐活动 | 原创音乐现金榜T榜</li>
+		<li><img src="image/img2.png"><br>推荐节目|《TAImusic》爆笑来袭</li>
+		<li><img src="image/img3.png"><br>推荐歌单 | 继续宠爱张国荣</li>
+		<li><img src="image/img4.png"><br>推荐活动| 330金属音乐巡演 成都小酒馆音乐空间</li>
+		</ul>
+	</div> -->
+	<!-- 以下老師寫的方法更周到，要學習 -->
+		<ul class="clear">
+		<li>
+			<div><img src="image/img1.png"></div>
+			<p class="info">推荐活动 | 原创音乐现金榜T榜</p>
+		</li>
+		<li>
+			<div><img src="image/img2.png"></div>
+			<p class="info">推荐活动 | 原创音乐现金榜T榜</p>
+		</li>
+		<li>
+			<div><img src="image/img3.png"></div>
+			<p class="info">推荐活动 | 原创音乐现金榜T榜</p>
+		</li>
+		<li>
+			<div><img src="image/img4.png"></div>
+			<p class="info">推荐活动 | 原创音乐现金榜T榜</p>
+		</li>
+</div>
+</body>
+</html>

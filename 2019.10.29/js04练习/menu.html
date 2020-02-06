@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+      *{
+      	margin: 0;
+      	padding: 0;
+      	font-size: 15px;
+      	list-style: none;
+      }
+      .menu{
+      	width: 200px;
+      	border: 1px solid #CCC;
+      	margin: 10px auto;
+      }
+      .menu p{
+      	height: 25px;
+      	line-height: 25px;
+      	font-weight: bold;
+      	/*border: 1px solid #CCC;*/
+      	background: #CCC;
+      	padding-left: 5px;
+      	cursor: pointer;
+
+      }
+      .menu li{
+      	height: 24px;
+      	line-height: 25px;
+      	padding-left: 10px;
+      }
+      div ul{
+      	display: none;
+      }
+	</style>
+<script type="text/javascript">
+		window.onload = function(){
+			var aPs = document.getElementsByTagName("p");
+			var aUls = document.getElementsByTagName("ul");
+
+			for(var i = 0; i < aPs.length; i++){
+				aPs[i].id = i;
+				aPs[i].oclick = function(){
+					console.log(this.id);
+					if(aUls[this.id].style.display == "block"){
+						aUls[this.id].style.display = "none";
+					}else{
+						aUls[this.id].style.display = "block";
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="menu" class="menu">
+		<div>
+		    <p>web前端</p>
+			<ul style="display:block">
+				<li>Javascript</li>
+				<li>DIV+CSS</li>
+				<li>jQuery</li>
+			</ul>
+		</div>
+		<div>
+			<p>后台脚本</p>
+			<ul>
+				<li>PHP</li>
+				<li>ASP.net</li>
+				<li>JSP</li>
+			</ul>
+		</div>
+		<div>
+			<p>前端框架</p>
+			<ul>
+				<li>Extjs</li>
+				<li>Esspress</li>
+				<li>YUI</li>
+			</ul>
+		</div>
+
+	</div>
+</body>
+</html>

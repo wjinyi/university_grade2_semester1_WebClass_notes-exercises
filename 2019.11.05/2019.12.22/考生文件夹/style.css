@@ -1,0 +1,91 @@
+*{margin: 0;padding: 0;}
+		.header{
+			background-color: #F8F8F8;
+			border-bottom: #DFDFDF solid 1px;
+		}
+		.hcontent{
+			margin: 0 auto;
+			height: 25px;
+			width: 1190px;
+		}
+		#topleft{
+			float: left;
+			line-height: 25px;
+			font-size: 10px;
+
+		}
+		#topright{
+			float: right;
+			line-height: 25px;
+			font-size: 7px;
+
+		}
+		.main{
+			margin: 0 auto;
+			width: 100%;
+			height: auto;
+			float: none;
+		}
+		.area2{
+			margin: 0 auto;
+			width: 1180px;
+			height: 100px;
+		}
+		.images{
+			float: left;
+		}
+		.area3{ 
+			height: 30px;
+			background-color: #fff;
+			
+		}
+		.guide1{
+			margin: 0 auto;
+			width: 1190px;
+			height: 30px;
+			background-color: #F9860F;
+		}
+		.guide1 li{
+			float: left;
+			list-style: none;
+			width: 80px;
+			text-align: center;
+		}
+		.guide1 a{
+			text-decoration: none;
+			font-size: 15px;
+			font-weight: bold;
+		}
+		.guide1 a:link, a:visited{
+			color: white;
+		}
+		.area4{
+			width: 100%;
+			height: 350px;
+			background-color: #47048E;
+		}
+		.content4{
+			margin: 0 auto;
+			width:1190px;
+			float: none;
+			overflow: hidden; 
+		}
+		.left{
+			float: left;
+			width: 400px;
+		}
+		.middle{
+			float: left;
+			width: 660px;
+		}
+		.right{
+			float: left;
+			width: 130px;
+		}
+		.waterfall{
+			float: right;
+		}
+		.waterfall li{
+			list-style: none;
+			margin: 0px;
+		}

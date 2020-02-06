@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>欢迎注册人人网！</title>
+	<style type="text/css">
+	*{margin: 0;padding: 0;}
+		.main{
+			height: 800px;
+			width: 350px;
+			/*background-color: grey;*/
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<p><img style="width: 350px;" src="image/renren_title.gif"></p>
+		<br>
+		<p>人人网，中国 <span style="font-weight: bold;">最真实、最有效</span>的社会平台，加入人人网，找回老朋友，结交新朋友。</p>
+		<br>
+		<form method="post" action="人人网注册_期末复习.html">
+			<p>电子邮箱：<input type="email" name="email" size="30" placeholder="请在此键入您的邮箱!"></p>
+			<br>
+			<p>设置密码：<input type="password" name="password" size="30" maxlength="15"></p>
+			<br>
+			<p>真实姓名：<input type="text" name="name" size="30" maxlength=4></p>
+			<br>
+			<p>性别：<input type="radio" name="sex" value="女" checked> 女 <input type="radio" value="男" name="sex"> 男 
+			</p>
+			<br>
+			<p>
+				生日：<input type="date" name="birthday" size="30">
+			</p>
+			<br>
+			<p>为什么要填写我的生日？</p>
+			<br>
+			<p>我现在：
+				<select name="identity">
+					<option disabled selected="seleted">请选择您的职业</option>
+					<option>学生</option>
+					<option>老师</option>
+					<option>公务员</option>
+				</select> (非常重要)
+			</p>
+			<br>
+			<p><img src="image/renren_code.gif"><a href="#">看不清换一张？<button></button></a>
+			</p>
+			<br>
+			<p>
+				验证：<input type="text" name="confirm" placeholder="请在此处输入验证码" maxlength="4">
+			</p>
+			<br>
+			<p><input type="submit" name="提交" style="background-image: url(image/renren.gif); width: 167px;height: 40px;" value=""></p>
+		</form>
+	</div>
+</body>
+</html>

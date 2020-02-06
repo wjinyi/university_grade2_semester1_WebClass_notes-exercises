@@ -1,0 +1,37 @@
+*{
+
+			margin:0;
+			padding:0;
+		}
+		.top_left{
+          background: #F8F8F8;
+          border-color: #DFDFDF;
+          width: 1190px;
+          height: 25px;
+		}
+		.top_right{
+			float: right;
+           
+		}
+		.area2{
+			width:1180px;
+			height: 100px;
+			margin:0 auto;
+			float:left;
+		}
+		.area3{
+			margin:0 auto;
+			width:1190px;
+			height: 30px;
+			column-align:#353026;
+            background-color:#F9860F;
+            font-color:#FFF;
+		}
+		.area4{
+			background-color: #47048E;
+			height: 350px;
+			width: 1190px;
+			margin:0 auto;
+			float: right;
+		}
+		.p

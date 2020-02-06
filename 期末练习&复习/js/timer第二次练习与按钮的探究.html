@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>timer 2nd ex</title>
+	<script type="text/javascript">
+			function startime(){
+			var timer = new Date();
+			var h = timer.getHours();
+			var m = timer.getMinutes();
+			var s = timer.getSeconds();
+
+			h = checktime(h);
+			m = checktime(m);
+			s = checktime(s);
+
+			var n = timer.getFullYear();
+			var y = timer.getMonth();
+			var r = timer.getDate();
+
+			var xq = timer.getDay();
+
+			day = Array("一","二","三","四","五","六","日");
+
+			document.getElementById("time").innerHTML = h + ":" + m + ":" + s;
+			// 要记得检查月份和星期有没有对上
+			document.getElementById("date").innerHTML = n + "年" + (y+1) + "月" + r + "日";
+			document.getElementById("day").innerHTML = "星期" + day[xq-1];
+			// Element没有s!谢谢！！！
+
+
+			}
+			function checktime(i){
+			if (i<10) {
+				i = "0" + i;
+			}
+			return i;
+			// 要记得return😂
+			}
+			// t = self.setInterval("startime()",500)
+			// 这句话的意思是以周期来不断调用这个函数，只要页面打开500ms就开始调用了。所以如果需要点击按钮才开始刷新并运行这个时钟的话就将它放到show()里面，点击按钮执行show(),开始刷新页面。
+			function show(){
+				startime()
+				t = self.setInterval("startime()",500)
+			}
+	</script>
+</head>
+<body>
+	<div>
+		<button onclick="show()">显示时钟</button>
+	</div>
+	<div class="main">
+		
+		<!-- <script type="text/javascript">
+			t = self.setInterval("startime()",500);
+		</script> -->
+		<div id="time">
+		
+		</div>
+		<div id="date">
+		
+		</div>
+		<div id="day">
+		
+		</div>
+		<button onclick="t = self.clearInterval(t)">停止计时器</button>
+	</div>
+</body>
+</html>

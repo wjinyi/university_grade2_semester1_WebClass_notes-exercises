@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>form confirm using js</title>
+	<script type="text/javascript">
+		function required(field,alerttext){
+			with(field){
+				if(value == null || value == ""){
+					alert(alerttext); return false;
+
+				}else{
+					return true;
+
+				}
+			}
+		}
+		function required_form(thisfrom){
+			with(thisfrom){
+				if (required(name,"还未填写用户名！")==false) {
+					if(required(password,"还未填写密码！")==false){
+						return false;
+					}
+				}else if(required(name,"还未填写用户名！")==true){
+					if (required(password,"还未填写密码！")==false) {
+						return false;
+					}
+				}else if(required(password,"还未填写密码！")==true){
+					if (required(name,"还未填写用户名！")==false) {
+						return false;
+					}
+				}
+			}	
+		}
+	</script>
+</head>
+<body>
+	<div class="main">
+		<form method="post" onsubmit="return required_form(this)" action="form_jsconfirm.html">
+			用户名：<input type="text" name="name">
+			密码：<input type="password" name="password">
+			<input type="submit" name="submit" value="提交">
+		</form>
+	</div>
+</body>
+</html>

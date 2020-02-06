@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>clock</title>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+		.main{
+			height: 400px;
+			width: 450px;
+			margin: 0 auto;
+			background-color: darkgrey;
+			position: relative;
+			top: 100px;
+		}
+		#clock{
+			font-size: 40px;
+			font-weight: bold;
+			color: brown;
+			position: relative;
+			left: 150px;
+		}
+		#calendar{
+			color: brown;
+			position: relative;
+			text-align: center;
+		}
+
+		button{
+			height: 60px;
+			width: 70px;
+			padding: 0px 5px;
+			position: relative;
+			left: 190px;
+			top: 20px;
+			color: brown;
+			font-weight: bold;
+
+		}
+	</style>
+	<script type="text/javascript">
+		function startime(){
+			var time = new Date();
+			var h = time.getHours();
+			var m = time.getMinutes();
+			var s = time.getSeconds();
+
+			m = check(m);
+			s = check(s);
+
+			var n = time.getFullYear();
+			var y = time.getMonth();
+			var r = time.getDate();
+
+			weekday = Array("一","二","三","四","五","六","日");
+			
+			var xq = time.getDay();
+
+			document.getElementById("clock").innerHTML = h + ":" + m + ":" + s;
+			document.getElementById("calendar").innerHTML = n + "年" + (y+1) + "月" + r + "日" + "<br>" + "星期" + weekday[xq+6];
+
+			// t = setTimeout(function() {
+			// 	startime();
+			// }, 500);
+		}
+		
+		function check(i){
+			if (i<10) {
+				i = "0" + i;
+			}
+			return i;
+		}
+	</script>
+</head>
+<body onload="startime()">
+	<div class="main">
+		<script type="text/javascript">
+			t = self.setInterval("startime()",500);
+			// function stoptime(){
+			// 	stop = self.clearInterval("t") 
+			// }
+		</script>
+		<div id="clock">
+			
+		</div>
+		<div id="calendar">
+			
+		</div>
+		<button id="stop" onclick="t = self.clearInterval(t)">
+			stop
+		</button>
+		
+	</div>
+</body>
+</html>

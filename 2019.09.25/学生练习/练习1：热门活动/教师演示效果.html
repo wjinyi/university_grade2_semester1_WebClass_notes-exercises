@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>热门活动</title>
+	<style type="text/css">
+	*{margin:0;padding:0;}
+	div.box{
+		width: 700px;
+		margin: 0 auto;
+		background: pink;
+		/*height: 450px;*/
+	}
+	ul{
+		clear: both;
+		/*overflow: hidden;*/
+	}
+	ul li{
+		list-style: none;
+		float: left;
+		margin: 20px;
+	}
+	/*.clear{
+		clear:both;
+		margin:0;
+		padding:0;
+	}*/
+	.clear:after{
+		    content: '';          /*在clear类后面添加内容为空*/
+    		display: block;      /*把添加的内容转化为块元素*/
+    		clear: both;         
+	}
+	</style>
+</head>
+<body>
+<div class="box">
+	<h1><p style="float: left;">热门</p><p style="float: right;">更多</p></h1>
+	<ul class="clear">
+		<li>
+			<div><img src="image/img1.png"></div>
+			<p class="info">推荐活动 | 原创音乐现金榜T榜</p>
+		</li>
+		<li>
+			<div><img src="image/img2.png"></div>
+			<p class="info">推荐活动 | 原创音乐现金榜T榜</p>
+		</li>
+		<li>
+			<div><img src="image/img3.png"></div>
+			<p class="info">推荐活动 | 原创音乐现金榜T榜</p>
+		</li>
+		<li>
+			<div><img src="image/img4.png"></div>
+			<p class="info">推荐活动 | 原创音乐现金榜T榜</p>
+		</li>
+		<!-- <div class="clear"></div> -->
+	</ul>
+</div>
+</body>
+</html>

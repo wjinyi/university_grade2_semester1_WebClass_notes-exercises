@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>timer last excercise</title>
+	<script type="text/javascript">
+		function timer(){
+			var timer = new Date();
+			var h = timer.getHours();
+			var m = timer.getMinutes();
+			var s = timer.getSeconds();
+
+			m = check(m);
+			s = check(s);
+
+			var n = timer.getFullYear();
+			var y = timer.getMonth();
+			var r = timer.getDate();
+
+			var day = timer.getDay();
+			var array = new Array("日","一","二","三","四","五","六");
+
+			function check(i){
+				if (i<10) {
+					i = "0" + i;
+				}
+				return i;
+			}
+
+
+			document.getElementById("time").innerHTML = h + ":" + m + ":" + s;
+			document.getElementById("date").innerHTML = n + "年" + (y+1) + "月" + r + "日";
+			document.getElementById("day").innerHTML = "星期" + array[day];			
+
+		}
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+		t = self.setInterval("timer()",500);
+	</script>
+	<div id="time">
+		
+	</div>
+	<div id="date">
+		
+	</div>
+	<div id="day">
+		
+	</div>
+
+</body>
+</html>

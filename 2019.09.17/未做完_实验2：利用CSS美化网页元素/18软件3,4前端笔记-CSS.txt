@@ -1,0 +1,336 @@
+week3_1初识CSS
+问题：
+什么是CSS？
+CSS3的基本语法结构是什么？
+CSS3的基本选择器有哪几种？语法规则是什么？
+CSS3的高级选择器有哪些？
+在HTML中引入CSS样式的几种方式是什么？
+=====================================
+学习目标：
+会使用行内样式、内部样式表和外部样式表三种方式为HTML5文档添加CSS样式
+会使用CSS3的基本选择器设置字体大小和颜色
+会使用复合选择器为特定的网页元素添加CSS样式
+会使用CSS3高级选择器为网页元素添加CSS样式
+========================================
+1、什么是CSS？
+层叠样式表,主要用来美化、定位网页元素，做网页布局.
+2、CSS的基本语法
+选择器{
+   声明语句1;
+   声明语句2;
+   声明语句3;
+	......
+}
+实例：
+div{
+	font-size:30px;
+	color:red;
+		}
+3、在HTML中引入CSS样式的3种方式
+（1）行内样式
+<div style="color: blue;font-weight: bold;">文字</div>
+(2)页内样式: 在head标签内嵌套style标签, css样式写在style标签中
+
+<head>
+	<meta charset="UTF-8">
+	<title>CSS</title>
+	<style type="text/css">
+		div{
+			font-size: 30px;
+			color: red;
+		}
+	</style>
+</head>
+行内样式的优先级别高于页内样式
+(3)外部样式表
+1)链接外部样式表
+在head头标签内嵌套
+<link rel="stylesheet" href=".\style.css">
+注意:href属性的值为样式表的地址
+2)导入外部样式表
+<head>
+	<meta charset="UTF-8">
+	<title>CSS</title>	
+	<style type="text/css">		
+		@import url(style.css);
+	</style>
+</head>
+================================
+优先级别：越靠近设置对象优先级别越高
+================================
+4、CSS的基本选择器
+(1)通配选择符
+基本语法：
+*{声明语句;}
+实例：
+*{
+		margin: 0;
+		padding: 0;
+	}
+	“*”：表示对所有元素.
+	注：在做网页布局时，经常需要清除页面元素的默认margin和padding	
+（2）标签选择器
+语法：
+标签名{声明语句;}
+实例:
+div{
+		color: blue;
+	}
+(3)类选择器
+语法：
+.类名{声明语句;}
+实例：
+<div class="box">段落2</div>
+=====样式设置======
+.box{
+		font-size: 30px;
+		font-weight: bold;
+	}
+====注意：=====
+类名可以有多个，类名之间用空格隔开
+实例：
+<div class="con">文字</div>
+<div class="con box">段落2</div>
+=====样式设置======
+.box{
+		font-size: 30px;
+		font-weight: bold;
+	}
+.con{
+		border: 1px solid red;
+		width: 100px;
+	}
+
+(4)id选择器
+语法：
+#id名{声明语句;}
+实例:
+<div id="sin">id选择器</div>
+=====样式设置======
+#sin{
+		font-size: 30px;
+		color: yellow;
+	}
+问题： id选择器和类选择器有什么区别？
+id值唯一，类名可以有多个
+<div id="sin">id选择器</div>
+	<p id="sin">p段落</p>
+正确。不同标签中允许有相同的id值
+<div id="con sin">id选择器</div>
+错误。id的值只能有一个
+==========================
+5、CSS高级选择器
+(1)层次选择器
+1)后代选择器:包含选择符会选中所有符合条件的后代，包括儿子，孙子，孙子的孙子... 
+语法:E F{声明语句;}
+实例：
+<body>
+	<p  class="active">1</p>
+	<p>2</p>
+	<p>3</p>
+	<ul>
+		<li>
+			<p>4</p>
+		</li>
+		<li>
+			<p>5</p>
+		</li>
+		<li>
+			<p>6</p>
+		</li>
+	</ul>
+
+</body>
+===样式设置===
+/*后代选择器*/
+		body p{
+			background: red;
+		}
+1,2,3,4,5,6设置红色背景
+2）子选择器
+E>F{声明语句;}
+===样式设置===
+/*子选择器*/
+		body>p{
+			background: pink;
+		}
+1,2,3设置粉色背景
+3)相邻兄弟选择器
+基本语法:
+E+F{声明语句;}
+===样式设置===
+.active + p{
+			background: green;
+		}
+2设置绿色
+4)兄弟选择器
+基本语法:
+E~F{声明语句;}
+=====样式设置=====
+.active~p{
+			background: yellow;
+		}
+2,3设置黄色
+(2)伪类选择器
+1)超链接的几种状态
+a:link->设置超链接a在未被访问前的样式。 
+a:visited->设置超链接a在其链接地址已被访问过时的样式。 
+a:hover->设置元素在其鼠标悬停时的样式。 
+a:active->设置元素在被用户激活（在鼠标点击与释放之间发生的事件）时的样式。 
+超链接的4种状态，需要有特定的书写顺序才能生效。
+a:link{
+		color: red;
+	}
+	a:visited{
+		color: yellow;
+	}
+	a:hover{
+		color: blue;
+	}
+	a:active{
+		color: green;
+	}
+	==注意==
+	css3不单单对超链接标签，对其他标签也可以有hover等状态
+	比如：
+	ul li:hover{
+		color: red;
+	} 
+2)奇偶项
+实例：
+<ul>
+		<li>列表</li>
+		<li>列表</li>
+		<li>列表</li>
+		<li>列表</li>
+		<li>列表</li>
+		<li>列表</li>
+		<li>列表</li>
+		<li>列表</li>
+	</ul>
+选中偶数项：
+ul li:nth-child(2n){
+		color: red;
+	}
+和
+	ul li:nth-child(even){
+		color: red;
+	}
+===========================
+选中奇数项：
+	ul li:nth-child(2n+1){
+		color: blue;
+	}
+	和
+ul li:nth-child(odd){
+		color: red;
+	}	
+=========================================
+(3)属性选择器
+1）语法：
+E[att] { sRules }
+说明：
+选择具有att属性的E元素。
+
+2）
+ /*/!*属性href里以http开头的元素*!/*/
+        a[href^=http] {
+            background: red;
+        }
+3)
+语法：
+E[att^="val"] { sRules }
+说明：
+选择具有att属性且属性值为以val开头的字符串的E元素。 
+=========================
+week3_2   CSS3美化网页元素
+会使用CSS设置字体样式和文本样式
+会使用CSS设置超链接样式
+会使用CSS设置列表样式
+会使用CSS设置背景样式
+会使用CSS设置渐变效果
+===========================
+1、使用CSS设置字体样式
+/*设置字体大小*/
+font-size: 40px;
+/*设置字体粗细*/
+font-weight: bold;
+/*设置字体风格*/
+font-style: italic;
+/*设置字体类型*/
+font-family: "黑体";
+==说明:在一个声明中设置所有字体属性===
+字体属性的顺序：字体风格→字体粗细→字体大小→字体类型
+font: italic bold 50px "仿宋"; 
+
+2、文本样式
+（1）/*设置文本颜色*/
+color: red;
+color的取值可以为rgb或rgba
+实例：
+color: rgb(41, 27, 5);
+color: rgba(41, 27, 5,0.7);
+说明：a表示透明度,取值0-1.
+
+(2)/*设置文本对齐方式*/
+text-align: center;
+设置文本的水平居中
+
+(3)/*设置文本首行缩进*/
+text-indent: 2em;
+说明：1em就是1倍文字的大小
+(4)/*设置文本装饰*/
+text-decoration: underline;
+说明：去除超链接的下划线
+text-decoration: none;
+(5)/*设置行高*/
+line-height: 30px;
+===使用技巧==
+行高值和容器高度值一致，可以设置垂直居中的效果
+(6)文本阴影
+语法:
+text-shadow : color  x-offset  y-offset  blur-radius
+color：阴影颜色
+x-offset: x轴偏移量
+y-offset:y轴偏移量
+blur-radius :模糊半径           
+实例:
+text-shadow: red 1px 1px 2px;
+3、超链接伪类
+4、列表样式
+去除列表前的默认小圆点:
+list-style: none;
+设置列表前面的图标:
+list-style-image: url(./image/arrow-icon.gif) ;
+5、背景样式
+设置背景颜色:
+background-color:red;
+设置背景图片
+background: url(./image/arrow-icon.gif);
+background-image: url(./image/arrow-icon.gif);
+设置背景是否重复
+background-repeat: no-repeat;
+对背景图片进行定位
+background-position: 5px 5px;
+==使用技巧：可以连续设置
+background: url(./image/arrow-icon.gif) 50px 5px no-repeat;
+
+6、设置线性渐变（作为background的值）
+语法:linear-gradient ( position,  color1,  color2,…)
+background: linear-gradient(to top,red,blue):
+====================
+CSS3渐变兼容:
+IE浏览器是Trident内核，加前缀：-ms-
+Chrome浏览器是Webkit内核，加前缀：-webkit-
+Safari浏览器是Webkit内核，加前缀：-webkit-
+Opera浏览器是Blink内核，加前缀：-o-
+Firefox浏览器是Mozilla内核，加前缀：-moz-
+
+
+
+
+
+
+
+
+

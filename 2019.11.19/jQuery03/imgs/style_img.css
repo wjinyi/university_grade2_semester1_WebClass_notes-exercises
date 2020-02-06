@@ -1,0 +1,19 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+#wrap{
+	width: 600px;
+	margin: 10px auto;
+}
+ul li{
+	list-style: none;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	float: left;
+	padding: 5px;
+	border: 1px solid #ccc;
+}
+#wrap #con{
+	clear:both;
+}

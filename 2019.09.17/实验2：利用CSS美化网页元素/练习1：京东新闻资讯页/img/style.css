@@ -1,0 +1,32 @@
+#a1{
+	text-align: center;
+	color: black;
+	text-shadow: #333 2px 2px 3px;
+	font-size: 22px;
+
+}
+#a2{
+	color: #999;
+	text-align: center;
+	font-size: 18px;
+	line-height: 30px;
+
+}
+#a3{
+	color: black;
+	font-size: 13px;
+	text-align: center;
+
+}
+.a3{
+	color: red;
+
+}
+#a4{
+	text-align: center;
+
+}
+.style{
+	text-align: center;
+	line-height: 1.8;
+}

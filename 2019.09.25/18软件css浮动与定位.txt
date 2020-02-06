@@ -1,0 +1,53 @@
+CSS之浮动
+1、display属性
+block：块元素，元素从上到下排列，可以设置宽高
+inline:行内元素，元素从左到右排列，设置宽高不起作用
+inline-block:行内块元素，既具有块元素特点，又具有行内元素的特点，有宽高，元素从左到右排列
+none：设置不可见 
+2、float属性
+float:left|right|none;
+3、clear属性
+clear:left|right|both;
+4、解决父元素塌陷问题
+方法1：
+浮动元素后面加空div
+  <div class="clear"></div>
+.clear{  clear: both;  margin: 0; padding: 0;}
+方法2：
+设置父元素的高度
+方法3：
+父级添加overflow属性（overflow: hidden;）
+方法4：
+父级添加伪类after
+.clear:after{
+    content: "";          /*在clear类后面添加内容为空*/
+    display: block;      /*把添加的内容转化为块元素*/
+    clear: both;         /*清除这个元素两边的浮动*/
+}
+
+CSS之定位
+1、position:static | relative | absolute | fixed
+
+(1)static:没有定位，以标准流方式显示
+
+(2)relative: 相对自身原来位置进行偏移
+偏移设置：top、left、right、bottom
+注意坐标系
+相对定位元素的规律：
+设置相对定位的盒子会相对它原来的位置，通过指定偏移，到达新的位置
+设置相对定位的盒子仍在标准文档流中，它对父级盒子和相邻的盒子都没有任何影响
+设置相对定位的盒子原来的位置会被保留下来
+（3）absolute: 绝对定位
+使用了绝对定位的元素以它最近的一个“已经定位”的“祖先元素” 为基准进行偏移
+如果没有已经定位的祖先元素，会以浏览器窗口为基准进行定位
+绝对定位的元素从标准文档流中脱离，这意味着它们对其他元素的定位不会造成影响
+元素位置发生偏移后，它原来的位置不会被保留下来
+2、z-index属性: 设置层的叠放顺序
+
+
+==========
+div+css布局技术
+
+
+
+

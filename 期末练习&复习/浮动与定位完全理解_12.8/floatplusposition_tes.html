@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>float+position_test</title>
+	<style type="text/css">
+		/**{margin: 0;padding: 0;}*/
+		/*以下样式为无position只有float样式的位置定位*/
+/*	#sd{
+		height: 200px;
+		width: 200px;
+		background-color: red;
+		float: left;
+	}	
+	#fd{
+		height: 200px;
+		width: 200px;
+		background-color: green;
+		float: left;
+	}
+	#td{
+		height: 200px;
+		width: 200px;
+		background-color: blue;
+		float: left;
+	}*/		
+		/*以下样式为absolute位置定位*/
+/*	#sd{
+		height: 200px;
+		width: 200px;
+		background-color: red;
+		position:absolute;
+		float: left;
+	}	
+	#fd{
+		height: 200px;
+		width: 200px;
+		background-color: green;
+		position: absolute;
+		left: 230px;
+		float: left;
+	}
+	#td{
+		height: 200px;
+		width: 200px;
+		background-color: blue;
+		position: absolute;
+		left: 460px;
+		float: left;
+	}*/		
+		/*以下样式为relative位置定位*/
+	#sd{
+		height: 200px;
+		width: 200px;
+		background-color: red;
+		position:relative;
+		float: left;
+	}	
+	#fd{
+		height: 200px;
+		width: 200px;
+		background-color: green;
+		position: relative;
+		left: 30px;
+		float: left;
+	}
+	#td{
+		height: 200px;
+		width: 200px;
+		background-color: blue;
+		position: relative;
+		left: 60px;
+		float: left;
+	}
+	#num{
+		height: 200px;
+		/*overflow: hidden; */
+/*		将大于容器高度的内容隐藏，这里容器高度为200px也就是色块的高度*/
+		/*以下测试针对只有float的位置定位*/
+		/*float: left;*/
+		/*position: relative;*/
+		/*left: 30px;*/
+		/*position: absolute;*/
+		/*left: 630px;*/
+		/*以下测试针对absolute位置定位*/
+		/*float: left;*/
+		/*position: relative;*/
+		/*left: 50px;*/
+		/*position: absolute;*/
+		/*left: 690px;*/
+		/*以下测试针对relative位置定位*/
+		float: left;
+		/*position: relative;*/
+		/*left: 90px;*/ 
+		/*思考这里为什么是90？哈哈！*/
+		position: absolute;
+		left: 690px;
+	}
+	</style>
+</head>
+<body>
+<div id=sd></div>
+<div id=fd></div>
+<div id=td></div>
+<!-- <script type="text/javascript">
+	for (var i = 0;i <= 50; i++) {
+		document.write(i+"<br/>");
+	}
+</script> -->
+<!-- 后来在script外套了一层div，使得script不再在最底层的普通流里面，而是成为一个块在网页的普通流中排列 -->
+<div id=num><script type="text/javascript">
+	for (var i = 0;i <= 50; i++) {
+		document.write(i+"<br/>");
+	}
+</script></div>
+</body>
+</html>

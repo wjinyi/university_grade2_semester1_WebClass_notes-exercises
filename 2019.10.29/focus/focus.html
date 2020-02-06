@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自动轮播图demo</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+		text-decoration: none;
+	}
+        .container{
+        	width: 600px;
+        	height: 400px;
+        	background: #CCC;
+        	margin: 20px auto;
+        	position: relative;
+        	overflow: hidden;
+        }
+        #container #list{
+        	z-index: 1;
+        }
+        #container #list{
+        	width: 4200px;
+        	position: absolute;
+        	
+        }
+        ul li{
+        	list-style: none;
+        	width: 600px;
+        	height: 400px;
+        	float: left;
+        }
+          .arrow { 
+            cursor: pointer; 
+            display: none; 
+            line-height: 39px; 
+            text-align: center; 
+            font-size: 36px; 
+            font-weight: bold; 
+            width: 40px; 
+            height: 40px;  
+            position: absolute; 
+            z-index: 2; 
+            top: 180px; 
+            background-color: RGBA(0,0,0,.3); 
+            color: #fff;
+        }
+        .arrow:hover { 
+            background-color: RGBA(0,0,0,.7);
+        }
+        #container:hover .arrow { 
+            display: block;
+        }
+        #pre { left: 20px;}
+        #nex { right: 20px;}
+       
+       #buttons{
+        width: 100px;
+        height: 10px;
+        position: absolute;
+        left: 250px;
+        bottom: 20px;
+        z-index: 2;
+       }
+       #buttons span{
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #FFF;
+        float: left;
+        margin-right: 5px;
+       }
+       #buttons span.on{
+        background: red;
+       }
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oPre = document.getElementById("pre");//向右
+			var oNex = document.getElementById("nex")//整体向左运动
+			var oList = document.getElementById("list");
+			var isAnimating = false;//开关变量
+			oPre.onclick = function(){
+				if(isAnimating == true){
+					return;
+					}
+					animate(10,600);
+				
+			}
+			oNex.onclick = function(){
+					animate(-10,-600);
+			}
+			//动画函数
+			function animate(speed,el){
+				//记录当前位置
+				var curIndex = oList.offsetLeft;
+				//开始滚动,开启定时器
+				timer = setInterval(function(){
+					isAnimating = true;
+      			oList.style.left = oList.offsetLeft + speed + 'px';
+
+      			//关闭定时器
+      			if(oList.offsetLeft == curIndex + el){
+						clearInterval(timer);
+					if(oList.offsetLeft <= -3600){
+						oList.style.left = -600 + 'px';
+					}
+					if(oList.offsetLeft >= 0){
+						oList.style.left = -3000 + 'px';
+					}
+						isAnimating = false;
+					}
+      				},20);
+				
+					
+				
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="container" class="container">
+	   <div id="list" style="left: -600px">     
+	   	<ul>
+	   	    <li><img src="images/05.jpg" ></li>
+	   		<li><img src="images/01.jpg" ></li>
+	   		<li><img src="images/02.jpg" ></li>
+	   		<li><img src="images/03.jpg" ></li>
+	   		<li><img src="images/04.jpg" ></li>
+	   		<li><img src="images/05.jpg" ></li>
+	   		<li><img src="images/01.jpg" ></li>
+	   	</ul>
+	   </div>
+        <div id="buttons">
+            <span class="on"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+       <a href="#" id="pre" class="arrow">&lt;</a>
+	   <a href="#" id="nex" class="arrow">&gt;</a>		
+	</div>
+</body>
+</html>

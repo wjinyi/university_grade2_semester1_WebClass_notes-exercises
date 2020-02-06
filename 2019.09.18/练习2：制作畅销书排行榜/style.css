@@ -1,0 +1,15 @@
+	div p{
+			margin-bottom: 0px;
+			margin-top: 0px;
+			line-height: 50px;
+			width: 280px;
+			padding-left: 20px;
+			background-color: #FFBF00;
+			color: white;
+			font-weight: bolder;
+			font-size: 20px;
+			
+		}
+	p img{
+		vertical-align: middle;
+	}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+      *{
+      	margin: 0;
+      	padding: 0;
+      }
+      #wrap{
+      	width: 340px;
+      	border: 1px solid #CCC;
+      	margin: 10px auto;
+      }
+      /*tab区样式*/
+      #wrap #tab{
+      	width: 100%;
+      	height: 30px;
+      	line-height: 30px;
+      	border-bottom: 1px solid #CCC;
+      }
+      #wrap #tab ul{
+      	list-style: none;
+      }
+      #wrap #tab ul li{
+      	float: left;
+      	padding: 0 10px;
+      }
+      #wrap #tab ul li.selected{
+      	background: #ccc;
+      }
+
+      /*con区样式*/
+      #con{
+      	padding-top: 10px;
+      	font-size: 14px;
+      }
+      .mod{
+      	display: none;
+      }
+      .mod ul li{
+      	line-height: 1.5;
+      	list-style: none;
+      	padding-left: 10px;
+      }
+    
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var aPs = document.getElementsByTagName("p");
+			var aUls = document.getElementsByTagName("ul");
+
+			for(var i = 0; i < aPs.length; i++){
+				aPs[i].id = i;
+				aPs[i].oclick = function(){
+					console.log(this.id);
+					if(aUls[this.id].style.display == "block"){
+						aUls[this.id].style.display = "none";
+					}else{
+						aUls[this.id].style.display = "block";
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="tab">
+			<ul>
+				<li class="selected">国内</li>
+				<li>国际</li>
+				<li>社会</li>
+				<li>网评</li>
+			</ul>
+		</div>
+		<div id="con">
+			<div class="mod" style="display:block">
+				<ul>
+					<li>北京西城区房价涨幅全国居首 年化涨幅逾三成</li>
+					<li>国资委和央企9月查处违反八项规定38起 处理77人</li>
+					<li>最高法院对黑社会性质组织人数、经济实力提出量化标准</li>
+					<li>三部门发文:申请人自行完成事项不得设审批中介</li>
+					<li>交通:出租车改革征求意见稿半月共收意见3220件</li>
+				</ul>
+			</div>
+			<div class="mod">
+				<ul>
+					<li>阿富汗7级强震致印巴电力通讯中断 巴基斯坦4死</li>
+					<li>阿富汗北部7级强震 巴基斯坦首都建筑墙壁摇晃</li>
+					<li>外交部回应李克强访韩期间是否与安倍举行会晤</li>
+					<li>法国总统奥朗德将于11月2日至3日访华</li>
+					<li>李克强将访问韩国并出席第六次中日韩领导人会议</li>
+				</ul>
+			</div>
+			<div class="mod">
+				<ul>
+					<li>市民医院为父亲烧纸发现自己父亲被别人当爹火化</li>
+					<li>湖南常德一运钞车爆胎坠桥 3人当场死亡</li>
+					<li>男子看手机过马路被撞身亡 死时手机仍在放视频</li>
+					<li>男子将女子iPhone撞落 女子:拿国产机坐什么飞机</li>
+					<li>网曝山东平邑警察着警服路边打牌 回应称是协警</li>
+				</ul>
+			</div>
+			<div class="mod">
+				<ul>
+					<li>罚游客，不如精确打击耍奸使诈</li>
+					<li>去香港，懂点常识即可避免被骗</li>
+					<li>校园食品监管不能依赖偶然曝光</li>
+					<li>停车费博弈难以促进业委会成立</li>
+					<li>“恐吓”式禁烧标语伤农民感情</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

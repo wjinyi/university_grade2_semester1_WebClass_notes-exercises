@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>聚美优品美容产品热点</title>
+	<link rel="stylesheet" type="text/css" href="stylefinalex.css">
+	<style type="text/css">
+		*{margin:0;padding: 0;}
+		body{
+			margin:0 auto;
+			width: 600px;
+			height: 700px;
+			background-color: #E6E6F2;
+		}
+		div#body{
+			width: 400px;
+			height: 500px;
+			background-color: white;
+
+		}
+		p#title{
+			width: 380px;
+			height: 50px;
+			padding-left: 20px;
+			background-color: #FF0080;
+
+			line-height: 50px;
+			font-weight: bold;
+			font-family: "黑体";
+			color: white;
+		}
+		ul{
+			width: 400px;
+			height: 350px;
+		}
+		ul li{
+			width: 360px;
+			height: 47px;
+			padding-left: 40px;
+			line-height: 50px;
+			text-align: left;
+			list-style-position: inside;
+			list-style: none;
+
+			border-bottom: #666 dotted 3px;
+
+		}
+		ul li a{
+				font-family: "黑体";
+				text-decoration: none;
+		}
+		ul li a span{
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			background: #666;
+			display: inline-block;
+			border-radius: 50%;
+			color: white;
+			text-align: center;
+			font-weight: bold;
+			margin-right: 10px;
+		}
+/*		以下代码是错误的样式设置，当鼠标停留在数字圆标上的时候，整个超链接都会随之变化，但是停留在文字上时，只有文字会产生正确的效果。解决方法见下面非注释代码。
+		ul li a:link{
+			color: #4F4F4F;
+		}
+		ul li a:visited{
+			color: #600030;
+		}
+		ul li a:hover{
+			color: #FF0080;
+		}
+		ul li a:active{
+			background-color: #BE77FF; 
+		}
+		ul li a span:link{
+			background-color: #4F4F4F;
+		}
+		ul span:visited{
+			background-color: #600030;
+		}
+		ul span:hover{
+			background-color: #FF0080;
+		}
+		ul span:active{
+			background-color: #BE77FF; 
+		}*/
+	/*	注意，在设置标签样式时，可以将效果相同的状态用逗号隔开，可节省时间可空间。*/
+		ul li a:link, ul li a:visited{
+			color: #888;
+		}
+		ul li a:hover{
+			color: #FF0080;
+		}
+		ul li a:hover span{
+			background-color: #FF0080;
+		}
+
+	</style>
+</head>
+<body>
+<div id=body>
+	<p id=title>大家都喜欢买的美容品</p>
+	<ul>
+		<!-- span标签用来组合行内元素，通过设置span的形状和轮廓，可以作出原标。 -->
+		<li><a href="#"><span>1</span>雅诗兰黛即时修护眼部精华霜15ml</a></li>
+		<li><a href="#"><span>2</span>伊丽莎白雅顿显效复合活肤霜 75ml</a></li>
+		<li><a href="#"><span>3</span>OLAY玉兰油多效修护霜 50g</a></li>
+		<li><a href="#"><span>4</span>巨型一号丝瓜水320ML</a></li>
+		<li><a href="#"><span>5</span>倩碧保湿洁肤水2号 200ml</a></li>
+		<li><a href="#"><span>6</span>比度克细肤淡印霜 30g</a></li>
+		<li><a href="#"><span>7</span>兰芝(LANEIGE)夜间修护锁水面膜 80ml</a></li>
+		<li><a href="#"><span>8</span>SK-II护肤精华露 215ml</a></li>
+		<li><a href="#"><span>9</span>欧莱雅青春密码活颜精华肌底液</a></li>
+	</ul>
+
+</div>
+</body>
+</html>

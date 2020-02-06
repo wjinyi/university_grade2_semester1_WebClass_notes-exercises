@@ -1,0 +1,227 @@
+week3_1初识CSS
+问题：
+什么是CSS？
+CSS3的基本语法结构是什么？
+CSS3的基本选择器有哪几种？语法规则是什么？
+CSS3的高级选择器有哪些？
+在HTML中引入CSS样式的几种方式是什么？
+=====================================
+学习目标：
+会使用行内样式、内部样式表和外部样式表三种方式为HTML5文档添加CSS样式
+会使用CSS3的基本选择器设置字体大小和颜色
+会使用复合选择器为特定的网页元素添加CSS样式
+会使用CSS3高级选择器为网页元素添加CSS样式
+========================================
+1、什么是CSS？
+层叠样式表,主要用来美化、定位网页元素，做网页布局.
+2、CSS的基本语法
+选择器{
+   声明语句1;
+   声明语句2;
+   声明语句3;
+	......
+}
+实例：
+div{
+	font-size:30px;
+	color:red;
+		}
+3、在HTML中引入CSS样式的3种方式
+（1）行内样式
+<div style="color: blue;font-weight: bold;">文字</div>
+(2)页内样式: 在head标签内嵌套style标签, css样式写在style标签中
+
+<head>
+	<meta charset="UTF-8">
+	<title>CSS</title>
+	<style type="text/css">
+		div{
+			font-size: 30px;
+			color: red;
+		}
+	</style>
+</head>
+行内样式的优先级别高于页内样式
+(3)外部样式表
+1)链接外部样式表
+在head头标签内嵌套
+<link rel="stylesheet" href=".\style.css">
+注意:href属性的值为样式表的地址
+2)导入外部样式表
+<head>
+	<meta charset="UTF-8">
+	<title>CSS</title>	
+	<style type="text/css">		
+		@import url(style.css);
+	</style>
+</head>
+================================
+优先级别：越靠近设置对象优先级别越高
+================================
+4、CSS的基本选择器
+(1)通配选择符
+基本语法：
+*{声明语句;}
+实例：
+*{
+		margin: 0;
+		padding: 0;
+	}
+	“*”：表示对所有元素.
+	注：在做网页布局时，经常需要清除页面元素的默认margin和padding	
+（2）标签选择器
+语法：
+标签名{声明语句;}
+实例:
+div{
+		color: blue;
+	}
+(3)类选择器
+语法：
+.类名{声明语句;}
+实例：
+<div class="box">段落2</div>
+=====样式设置======
+.box{
+		font-size: 30px;
+		font-weight: bold;
+	}
+====注意：=====
+类名可以有多个，类名之间用空格隔开
+实例：
+<div class="con">文字</div>
+<div class="con box">段落2</div>
+=====样式设置======
+.box{
+		font-size: 30px;
+		font-weight: bold;
+	}
+.con{
+		border: 1px solid red;
+		width: 100px;
+	}
+
+(4)id选择器
+语法：
+#id名{声明语句;}
+实例:
+<div id="sin">id选择器</div>
+=====样式设置======
+#sin{
+		font-size: 30px;
+		color: yellow;
+	}
+问题： id选择器和类选择器有什么区别？
+id值唯一，类名可以有多个
+<div id="sin">id选择器</div>
+	<p id="sin">p段落</p>
+正确。不同标签中允许有相同的id值
+<div id="con sin">id选择器</div>
+错误。id的值只能有一个
+==========================
+5、CSS高级选择器
+(1)层次选择器
+1)后代选择器:包含选择符会选中所有符合条件的后代，包括儿子，孙子，孙子的孙子... 
+语法:E F{声明语句;}
+实例：
+<body>
+	<p  class="active">1</p>
+	<p>2</p>
+	<p>3</p>
+	<ul>
+		<li>
+			<p>4</p>
+		</li>
+		<li>
+			<p>5</p>
+		</li>
+		<li>
+			<p>6</p>
+		</li>
+	</ul>
+
+</body>
+===样式设置===
+/*后代选择器*/
+		body p{
+			background: red;
+		}
+1,2,3,4,5,6设置红色背景
+2）子选择器
+E>F{声明语句;}
+===样式设置===
+/*子选择器*/
+		body>p{
+			background: pink;
+		}
+1,2,3设置粉色背景
+3)相邻兄弟选择器
+基本语法:
+E+F{声明语句;}
+===样式设置===
+.active + p{
+			background: green;
+		}
+2设置绿色
+4)兄弟选择器
+基本语法:
+E~F{声明语句;}
+=====样式设置=====
+.active~p{
+			background: yellow;
+		}
+2,3设置黄色
+(2)伪类选择器
+1)超链接的几种状态
+a:link->设置超链接a在未被访问前的样式。 
+a:visited->设置超链接a在其链接地址已被访问过时的样式。 
+a:hover->设置元素在其鼠标悬停时的样式。 
+a:active->设置元素在被用户激活（在鼠标点击与释放之间发生的事件）时的样式。 
+超链接的4种状态，需要有特定的书写顺序才能生效。
+a:link{
+		color: red;
+	}
+	a:visited{
+		color: yellow;
+	}
+	a:hover{
+		color: blue;
+	}
+	a:active{
+		color: green;
+	}
+	==注意==
+	css3不单单对超链接标签，对其他标签也可以有hover等状态
+	比如：
+	ul li:hover{
+		color: red;
+	} 
+2)奇偶项
+实例：
+<ul>
+		<li>列表</li>
+		<li>列表</li>
+		<li>列表</li>
+		<li>列表</li>
+		<li>列表</li>
+		<li>列表</li>
+		<li>列表</li>
+		<li>列表</li>
+	</ul>
+选中偶数项：
+ul li:nth-child(2n){
+		color: red;
+	}
+和
+	ul li:nth-child(even){
+		color: red;
+	}
+===========================
+选中奇数项：
+	ul li:nth-child(2n+1){
+		color: blue;
+	}
+	和
+ul li:nth-child(odd){
+		color: red;
+	}	

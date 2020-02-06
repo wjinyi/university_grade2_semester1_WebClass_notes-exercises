@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>form confirm last excercise</title>
+	<script type="text/javascript">
+		function codeName(){
+			return confirm("name",/^[a-z0-9_-]{3,16}$/);
+		}
+		function codePassword(){
+			return confirm("password",/^[a-z0-9_-]{6,18}$/);
+		} 
+		function codeEmail(){
+			return confirm("email",/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/);
+		}
+
+		function confirm(id,reg){
+			var name = document.getElementById(id).value;
+			var span = document.getElementById(id+"Span");
+
+			if (name == "" || name == null) {
+				span.innerHTML = "不能为空！";
+				return false;
+			}else if (reg.test(name)) {
+				span.innerHTML = "ok";
+				return true;
+			}else{
+				span.innerHTML = "不符合格式！"
+				return false;
+			}
+		}
+
+		function telconf(){
+			var telnum = document.getElementById("telnum").value;
+			var telspan = document.getElementById("telnumSpan");
+
+			if (telnum.length!=11) {
+				telspan.innerHTML = "请确认号码为11位！";
+				return false;
+			}else{
+				telspan.innerHTML = "ok";
+				return true;
+			}
+		}
+
+		function passwordconf(){
+			var password = document.getElementById("password").value;
+			var password1 = document.getElementById("password1").value;
+			var pw1span = document.getElementById("password1Span");
+
+			if (password1 == password) {
+				pw1span.innerHTML = "ok"
+				return true;
+			}else{
+				pw1span.innerHTML = "请确认密码一致！"
+				return false;
+			}
+		}
+
+		function jump(){
+			spanname = document.getElementById("nameSpan");
+			spanpassword = document.getElementById("passwordSpan");
+			spanpassword1 = document.getElementById("password1Span");
+			spanemail = document.getElementById("emailSpan");
+			spantelnum = document.getElementById("telnumSpan");
+
+			if (spanname.innerHTML=="ok"&&spanpassword.innerHTML=="ok"&&spanpassword1.innerHTML=="ok"&&spanemail.innerHTML=="ok"&&spantelnum.innerHTML=="ok") {
+				window.location.href = "http://www.baidu.com";
+				return true;
+			}else{
+				alert("请检查是否有未填写的空！");
+				return false;
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="main">
+		<form method="post" action="formconf_secondtimetest.html">
+			<p>
+				用户名：<input type="text" id="name" name="name" onblur="codeName()">
+			<span id="nameSpan"></span>
+			</p>
+
+			<p>
+				密码：<input type="password" id="password" name="password" onblur="codePassword()">
+			<span id="passwordSpan" ></span>
+			</p>
+
+			<p>
+				确认密码：<input type="password" id="password1" name="password1" onblur="passwordconf()">
+			<span id="password1Span" ></span>
+			</p>
+
+			<p>
+				性别：<input type="radio" id="sex" name="sex" checked> 女
+				<input type="radio" id="sex" name="sex"> 男
+			</p>
+			<p>
+				电话：<input type="text" id="telnum" name="telnum" onblur="telconf()">
+				<span id="telnumSpan" ></span>
+			</p>
+
+			<p>
+				邮箱：<input type="email" id="email" name="email" onblur="codeEmail()">
+				<span id="emailSpan" ></span>
+			</p>
+
+		</form>
+		<input type="submit" id="submit" name="submit" value="提交" onclick="jump()">
+	</div>
+</body>
+</html>

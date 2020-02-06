@@ -1,0 +1,234 @@
+﻿week01_1:html基础
+1、html的基本结构
+<!DOCTYPE html>
+<html>
+     <head>
+	<meta charset="utf-8">
+         <title>网页的标题</title>
+     </head>
+     <body>网页的内容</body>
+</html>
+2、网页的基本信息
+（1）设置网页编码
+<meta charset="utf-8">
+(2)设置关键字
+<meta name="编程" content="java,html,css">
+(3)......
+3、网页的基本标签（单标签和双标签、行内元素和块元素）
+(1)标题标签
+<h1>一级标题字</h1>
+<h2>二级标题字</h2>
+....
+数字越大，字越小
+（2）段落标签:<p>段落</p>
+（3）单标签：
+换行标签<br/>
+水平线标签<hr/>
+(4)注释：注释浏览器不解释执行
+<!--html注释-->
+(5)特殊符号标签
+空格：&nbsp;
+大于(>):&gt;
+小于(<):&lt;
+版权（©）：&copy;
+注册商标（®）：&reg.
+&reg;
+4、标准文档流：块元素和行内元素
+块元素典型：<div>块元素</div>
+独自占一行，可以设置宽高
+行内元素典型：<span>行内元素</span>
+设置宽高不起作用
+思考：
+1、有行内块元素吗？有的话，特点怎样？
+有，具有行内元素的特点，又具有块元素的特点
+2、查阅有关SublimeText和HBuilder编辑器的使用，比较二者的差别和各自的优缺点。
+============================================================================
+week01_2 第1篇：HTML基础
+1、 习题讲解
+网页文字格式化标签
+<strong>加粗</strong>  <b>加粗</b>
+<em>斜体</em>
+2、有关行内元素、块元素、行内块元素
+===
+新课：
+1、图像标签(行内块元素)
+<img src="图像地址" title="鼠标悬停上面的说明文字" width="宽度" height="高度"/>
+注意相对路径问题
+
+2、超链接：
+（1）作用：通过超链接可以将整个网站的页面联系起来
+（2）语法：
+ <a href="超链接的地址" target="打开窗口">文字或图片</a>
+target的取值：
+_self->在原窗口打开链接地址
+_blank->在新窗口打开链接地址
+（3）超链接的类型
+a）页面间的链接
+b）锚链接：
+从A页面的甲位置跳转到本页中的乙位置
+从A页面的甲位置跳转到B页面中的乙位置
+步骤：
+创建跳转标记<a name="marker">乙位置</a>
+创建跳转链接<a href="#marker">甲位置</a>
+
+c)功能性链接
+如：电子邮件链接<a href="mailto:bdqnWebmaster@bdqn.cn">联系我们</a>
+
+3、列表
+(1)无序列表
+以<ul>标签来实现
+以<li>标签表示列表项
+<ul>
+	<li>列表项</li>
+	<li>列表项</li>
+	<li>列表项</li>
+	<li>列表项</li>
+</ul>
+
+无序列表中的每项都是平级的，没有级别之分，并且列表中的内容一般都是相对简单的标题性质的网页内容
+(2)有序列表
+以<ol>标签来实现
+以<li>标签表示列表项
+
+<ol>
+	<li>列表项</li>
+	<li>列表项</li>
+	<li>列表项</li>
+	<li>列表项</li>
+</ol>
+有序列表ol-li一般用于显示带有顺序编号的特定场合
+
+(3)定义列表
+以<dl>标签来实现
+以<dt>标签定义列表项
+以<dd>标签定义内容
+<dl>
+    <dt>水果</dt>
+    <dd>苹果</dd>
+    <dd>桃子</dd>
+    <dd>李子</dd>
+</dl>
+定义列表一般适用于带有标题和标题解释性内容的场合
+4、表格标签
+
+<table border="1">
+    <thead>
+    	<tr>
+    		<th>表头</th>
+    		<th>表头</th>
+    	</tr>
+    </thead>
+    <tbody>
+    <tr>
+         <td>第1个单元格的内容</td>
+         <td>第2个单元格的内容</td>
+        ……
+    </tr>
+    <tr>
+         <td>第1个单元格的内容</td>
+         <td>第2个单元格的内容</td>
+        ……
+    </tr>
+    </tbody>
+</table>
+================================
+上课练习存在问题：
+Sublime Text使用
+（1）双击图标，启动软件，新建文件：file->New file
+（2）保存文件： file->save(ctrl+s)
+注意：编辑html文件时，文件名保存为.html格式文件
+（3）保存为.html格式文件前提下，输入html后，按tab，才会生成html的基本结构
+（4）编辑好html文件后，想在浏览器中查看效果：右击,在弹出的快捷菜单中选中->Open in Browser
+================================================================
+week02_1 表单
+习题讲解（复习）
+====================
+1、表单:表单的基本语法
+<form  method="post" action="result.html">
+   .........
+</form>
+(1)method: 表示提交方式 , 取值get/post，一般建议用post提交,更安全
+(2)action: 表示向何处发送表单数据
+
+2、表单的元素
+语法:
+<input type="" name="" value="">
+(1)type指定元素类型，取值可以如下:
+text:文本框
+password:密码
+checkbox:复选框
+radio:单选按钮, checked属性表示选中状态
+性别:
+<input type="radio" name="sex">男 
+<input type="radio" name="sex">女
+注意：
+name属性的值需要设置一致
+submit:提交按钮
+reset:重置按钮：清空填写的表单数据
+button: 普通按钮
+date:日历面板
+file:文件上传
+默认为 text
+
+
+下拉列表:
+
+  	<select name="shenfen">
+  		<option value="团员">团员</option>
+  		<option value="党员" selected>党员</option>
+  	</select>
+selected:表示默认选项
+
+多行文本域：<textarea  name="showText"  cols="x"  rows="y">文本内容 </textarea  >
+rows:设置行数
+cols:设置列数
+
+(2)name:指定表单的名称
+(3)value:设置表单元素的值
+(4)设置表单元素的标注
+<label for="male">男</label>
+<input type="radio" name="gender" id="male"/>
+label标签for属性值和input标签中id属性值一致。
+3、设置表单元素的只读、隐藏和禁用
+
+(1)隐藏:<input type="hidden" value="666" name="userid">
+(2)只读：<input name="name" type="text" value="张三"  readonly>
+（3）禁用：<input type="submit "  disabled   value="保存" >
+4、表单的初级验证
+(1)placeholder:文本框输入内容提示
+<input type="search" name="sousuo"  placeholder="请输入要搜索的关键字"/>
+课后思考：激活文本框，提示文字去除？？？？
+(2)required : 表示必填项
+<input type="text" name="" required />
+（3）pattern:用户输入的内容必须符合正则表达式所指的规则，否则就不能提交表单
+<input type="text" name="tel"  pattern="^1[358]\d{9}" />
+课后查阅看懂：邮箱的正则表达式
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

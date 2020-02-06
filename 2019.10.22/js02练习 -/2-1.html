@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+        div{
+        	width: 400px;
+        	height: 200px;
+        	background: #CCC;
+        	margin: 0 auto;
+        	color: red;
+        	font-size: 20px;
+        	line-height: 70px;
+        	text-align: center;
+        }
+	</style>
+	 <script type="text/javascript">
+	 window.onload = function(){
+		setInterval(function showTime(){
+        var time = new Date();
+        var year = time.getFullYear();
+        var month = time.getMonth();
+        var date = time.getDate();
+        var hour = time.getHours();
+        var minute = time.getMinutes();
+        var second = time.getSeconds();
+        var day = time.getDay();
+        var weekday=new Array("一","二","三","四","五","六","日");
+
+
+        var oDiv = document.getElementById("wrap");
+        //console.log(typeof(oDiv));
+        oDiv.innerHTML = year + "年" + (month+1) + "月" + date + "日" + "<br/>" + hour + "时" + minute + "分" + second + "秒" + "<br/>" + "星期" + array[day];
+        }
+        ,1000);
+    }
+         </script>
+</head>
+<body>
+	<div id = "wrap"></div>
+	<button onclick="clearInterval(timer)"></button>
+
+</body>
+</html>

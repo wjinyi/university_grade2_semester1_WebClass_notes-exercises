@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>碧鸿的表单验证方法</title>
+	<script type="text/javascript">
+		// 有问题，已在secondtime纠正
+		// 第一步，用函数写入正则表达式
+		function codeName(){
+			return codedata("name",/^[a-z0-9_-]{3,16}$/);
+		}
+		function codePassword(){
+			return codedata("password",/^[a-z0-9_-]{6,18}$/);
+		}
+		function codeEmail(){
+			return codedata("email",/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/);
+		}
+
+		// 第二步，写上面用到的codedata函数，作用是alert功能。innerHTML实现
+		function codedata(id,reg){
+			var name = document.getElementById(id).value;
+			var span = document.getElementById(id+"Span");
+
+			if(name == "" || name == null){
+				span.innerHTML = "不能为空！";
+				return false;
+			}else if(reg.test(name)){
+				span.innerHTML = "ok";
+				return true;
+			}else{
+				span.innerHTML = "不符合规则！"
+				return false;
+			}
+		}
+
+		// 第三步，设置判断密码是否一致的函数
+		function pwsame(){
+			var pwvalue = document.getElementById("password").value;
+			var pw1value = document.getElementById("password1").value;
+			var password1 = document.getElementById("password1Span")
+
+			if (pw1value == pwvalue) {
+				password1.innerHTML ="ok" ;
+				return true;
+			}else{
+				password1.innerHTML = "请确认密码是否一致！";
+				return false;
+			}
+		}
+
+			// 第四步，设置电话不能为空
+			function phone(){
+				var telvalue = document.getElementById("telnum").value;
+
+				var spantel = document.getElementById("telnumSpan");
+				if (telvalue == "" || telvalue == null) {
+					spantel.innerHTML = "不能为空！";
+					return false;
+				}else{
+					spantel.innerHTML = "ok";
+					return true;
+				}
+			}
+			// 最后一步，是跳转jump,用if语句来判断是否全部填写完整，否则alert提醒检查！
+
+			function jump(){
+				tel = document.getElementById("telnumSpan");
+				pw = document.getElementById("passwordSpan");
+				pw1 = document.getElementById("password1Span");
+				name = document.getElementById("password1Span");
+				 email = document.getElementById("email");
+
+				 if (tel.innerHTML=="ok"&&pw.innerHTML=="ok"&&pw1.innerHTML=="ok"&&name.innerHTML=="ok"&&email.innerHTML=="ok") {
+				 	window.location.href="http://www.baidu.com";
+				 }else{
+				 	alert("请检查是否有未填写项！")
+				 }
+
+			}
+	</script>
+</head>
+<body>
+	<div class="main">
+		<form method="post" action="bihong_formconf.html">
+			<p>
+				用户名：<input id="name" type="text" name="name">
+				<span id="nameSpan" onblur="codeName()"></span>
+			</p>
+			<p>
+				密码：<input id="password" type="password" name="password" onblur="codePassword()">
+				<span id="passwordSpan"></span>
+			</p>
+			<p>
+				确认密码：<input id="password1" type="password" name="password1" onblur="pwsame()">
+				<span id="password1Span"></span>
+			</p>
+			<p>
+				性别：<input type="radio" name="sex" value="女" checked> 女
+					<input type="radio" name="sex" value="男"> 男
+			</p>
+			<p>
+				邮箱：<input id="email" type="email" name="email">
+				<span id="emailSpan" onblur="codeEmail()"></span>
+			</p>
+			<p>
+				手机号：<input id="telnum" type="text" name="telnum">
+				<span id="telnumSpan" onblur="phone()"></span>
+			</p>
+		</form>
+		<input type="submit" name="submit" value="注册" onclick="jump()">
+	</div>
+</body>
+</html>

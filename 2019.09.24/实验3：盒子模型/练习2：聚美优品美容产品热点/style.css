@@ -1,0 +1,23 @@
+.title{
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	border: 1px solid red;
+	background-color: #e9185a;
+		line-height: 35px;
+		font-width: 100px;
+		font-height: 25px;
+		padding-left: 10px;
+}
+.list{
+	
+	color: #666;
+	font-size: 12px;
+	height: 30px;
+	line-height: 30px;
+	text-align: left;
+	text-decoration: none;
+	
+
+
+}
